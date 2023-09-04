@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        float number = readFloatFromConsole();
+        System.out.println("Вы ввели число: " + number);
+    }
+
+    public static float readFloatFromConsole() {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            try {
+                System.out.print("Введите дробное число: ");
+                return Float.parseFloat(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка! Неверный формат числа.");
+            }
+        }
+    }
+}
